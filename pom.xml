@@ -17,11 +17,11 @@
   </dependencies>
   <build>
     <plugins>
-<!--      <plugin> -->
+      <plugin> 
         <!-- Build an executable JAR -->
-<!--        <groupId>org.apache.maven.plugins</groupId>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.0.2</version>
+        <version>3.6.3</version>
         <configuration>
           <archive>
             <manifest>
@@ -32,7 +32,8 @@
           </archive>
         </configuration>
       </plugin> 
--->
+
+
 	  <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
