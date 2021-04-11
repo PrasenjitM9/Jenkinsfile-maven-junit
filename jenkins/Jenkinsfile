@@ -4,13 +4,13 @@ pipeline {
         stage('Checkout-git'){            
             steps{
                 echo 'Reviewing Project Prasenjit repository'
-                git poll: true, url: 'https://github.com/PrasenjitM9/jenkinsfile-maven-junit.git'
+                git poll: true, url: 'https://github.com/PrasenjitM9/Jenkinsfile-maven-junit.git'
             } 
         }    
         stage('Build') {
             steps {
 		//bat 'C:\\maven-3.6.2\\bin\\mvn -B -DskipTests clean package'
-                sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -DskipTests clean package'
             }
         }
         stage('Test') {
@@ -28,7 +28,7 @@ pipeline {
             steps {
 		echo 'Deploy del jar'
 		//bat 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
-		sh 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
+//		sh 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
