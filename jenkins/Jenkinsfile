@@ -28,8 +28,8 @@ pipeline {
             steps {
 		echo 'Deploy del jar'
 		//bat 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
-//		sh 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
-                sh './jenkins/scripts/deliver.sh'
+		sh sudo 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
+               // sh './jenkins/scripts/deliver.sh'
             }
         }
     }
