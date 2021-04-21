@@ -10,13 +10,14 @@ pipeline {
         stage('Build') {
             steps {
 		//bat 'C:\\maven-3.6.2\\bin\\mvn -B -DskipTests clean package'
-                sh 'mvn -DskipTests clean package'
+		bat 'mvn clean package'
+//                sh 'mvn -DskipTests clean package'
             }
         }
         stage('Test') {
             steps {
-		//bat 'C:\\maven-3.6.2\\bin\\mvn test'
-                sh 'mvn test'
+		bat 'mvn test'
+                //sh 'mvn test'
             }
             post {
                 always {
@@ -27,9 +28,9 @@ pipeline {
         stage('Deliver') {
             steps {
 		echo 'Deploy del jar'
-		//bat 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
-		sh 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
-               // sh './jenkins/scripts/deliver.sh'
+		bat 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8080'
+		//sh 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
+               bat './jenkins/scripts/deliver.sh'
             }
         }
     }
