@@ -30,7 +30,7 @@ pipeline {
 		echo 'Deploy del jar'
 		bat 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8090'
 		//sh 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
-               bat 'scripts/deliver.sh'
+               bat 'deliver.sh'
             }
         }
     }
