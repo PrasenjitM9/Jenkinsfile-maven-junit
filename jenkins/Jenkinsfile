@@ -28,9 +28,9 @@ pipeline {
         stage('Deliver') {
             steps {
 		echo 'Deploy del jar'
-		bat 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8080'
+		bat 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8090'
 		//sh 'java -jar target/my-app-1.0-SNAPSHOT.jar --httpPort=8082'
-               bat './jenkins/scripts/deliver.sh'
+               bat '/scripts/deliver.sh'
             }
         }
     }
